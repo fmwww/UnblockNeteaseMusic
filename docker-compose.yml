@@ -2,8 +2,10 @@ version: '3'
 
 services:
   unblockneteasemusic:
-    image: nondanee/unblockneteasemusic
+    build:
+      context: .
     environment:
       NODE_ENV: production
     ports:
-      - 8080:8080
+      - 8089:8080
+    command: -s -p 8080:8081 -e https://music.163.com -o qq kuwo kugou migu
