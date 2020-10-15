@@ -68,7 +68,7 @@ hook.target.path = new Set([
 ])
 
 const domainList = [
-	'music.163.com', 
+	'music.163.com',
 	'music.126.net',
 	'iplay.163.com',
 	'look.163.com',
@@ -172,6 +172,8 @@ hook.request.after = ctx => {
 						value['pl'] = (value['pl'] == 0) ? 320000 : value['pl']
 						value['dl'] = (value['dl'] == 0) ? 320000 : value['dl']
 					}
+					if ('sp' in value) value['sp'] = 7
+                    if ('cp' in value) value['cp'] = 1
 				}
 				return value
 			}
