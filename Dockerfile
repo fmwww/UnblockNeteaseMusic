@@ -1,5 +1,6 @@
 FROM alpine
-RUN apk add --update nodejs npm --repository=http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/
+RUN sed -i "s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g" /etc/apk/repositories \
+    && apk add --update nodejs npm
 
 ENV NODE_ENV production
 
